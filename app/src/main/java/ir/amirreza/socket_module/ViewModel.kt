@@ -71,6 +71,10 @@ class HomeViewModel : ViewModel() {
             .newEventSource(request, callback)
     }
 
+    fun testConnectMessage(callback: WebSocketListener) {
+        socket = client.newWebSocket(messageRequest, callback)
+    }
+
     fun send() {
         socket.send(text)
         text = ""
